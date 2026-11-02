@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ModelPage</class>
+ <widget class="QWidget" name="ModelPage">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>ModelPage</string>
+  </property>
+  <layout class="QVBoxLayout" name="mainLayout">
+   <property name="spacing">
+    <number>10</number>
+   </property>
+   <property name="leftMargin">
+    <number>24</number>
+   </property>
+   <property name="topMargin">
+    <number>24</number>
+   </property>
+   <property name="rightMargin">
+    <number>24</number>
+   </property>
+   <property name="bottomMargin">
+    <number>24</number>
+   </property>
+   <item>
+    <widget class="QLabel" name="titleLabel">
+     <property name="text">
+      <string>Choose Model</string>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>18</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="sourceGroup">
+     <property name="title">
+      <string>Model source</string>
+     </property>
+     <layout class="QVBoxLayout" name="sourceLayout">
+      <item>
+       <widget class="QRadioButton" name="localRadio">
+        <property name="text">
+         <string>Local file (.gguf)</string>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="huggingFaceRadio">
+        <property name="text">
+         <string>Hugging Face</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="fileLayout">
+        <item>
+         <widget class="QLineEdit" name="pathEdit">
+          <property name="placeholderText">
+           <string>Path to a .gguf file</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="browseButton">
+          <property name="text">
+           <string>Browse…</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="addButton">
+          <property name="text">
+           <string>Add</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="modelsLabel">
+     <property name="text">
+      <string>Models to benchmark:</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QListWidget" name="modelList">
+     <item>
+      <property name="text">
+       <string>Llama-3.2-1B-Instruct (Q4_K_M)</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Llama-3.2-1B-Instruct (Q8_0)</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Qwen2.5-0.5B-Instruct (Q4_K_M)</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="navLayout">
+     <item>
+      <widget class="QPushButton" name="backButton">
+       <property name="text">
+        <string>Back</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="nextButton">
+       <property name="text">
+        <string>Next</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources />
+ <connections />
+</ui>
