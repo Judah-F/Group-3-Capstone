@@ -10,3 +10,6 @@ class SettingsPage(QWidget):
 
         self.ui.backButton.clicked.connect(lambda: go_to("model"))
         self.ui.startButton.clicked.connect(lambda: go_to("results"))
+
+        # Custom settings can only be edited when "Custom" mode is picked
+        self.ui.customRadio.toggled.connect(self.ui.customGroup.setEnabled)
