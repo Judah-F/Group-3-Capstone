@@ -49,9 +49,9 @@
      </property>
      <layout class="QVBoxLayout" name="sourceLayout">
       <item>
-       <widget class="QRadioButton" name="localRadio">
+       <widget class="QRadioButton" name="huggingFaceRadio">
         <property name="text">
-         <string>Local file (.gguf)</string>
+         <string>Hugging Face (model name)</string>
         </property>
         <property name="checked">
          <bool>true</bool>
@@ -59,18 +59,21 @@
        </widget>
       </item>
       <item>
-       <widget class="QRadioButton" name="huggingFaceRadio">
+       <widget class="QRadioButton" name="localRadio">
         <property name="text">
-         <string>Hugging Face</string>
+         <string>Local model folder</string>
         </property>
        </widget>
       </item>
       <item>
        <layout class="QHBoxLayout" name="fileLayout">
         <item>
-         <widget class="QLineEdit" name="pathEdit">
+         <widget class="QLineEdit" name="modelEdit">
+          <property name="text">
+           <string>distilbert-base-uncased</string>
+          </property>
           <property name="placeholderText">
-           <string>Path to a .gguf file</string>
+           <string>Hugging Face model name or local folder</string>
           </property>
          </widget>
         </item>
@@ -104,17 +107,7 @@
     <widget class="QListWidget" name="modelList">
      <item>
       <property name="text">
-       <string>Llama-3.2-1B-Instruct (Q4_K_M)</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>Llama-3.2-1B-Instruct (Q8_0)</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>Qwen2.5-0.5B-Instruct (Q4_K_M)</string>
+       <string>distilbert-base-uncased</string>
       </property>
      </item>
     </widget>
