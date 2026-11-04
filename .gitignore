@@ -4,6 +4,8 @@ __pycache__/
 .venv/
 venv/
 
+*_ui.py
+
 # Mac / editors
 .DS_Store
 .vscode/
