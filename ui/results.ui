@@ -57,7 +57,8 @@
       <item>
        <widget class="QLabel" name="chartPlaceholderLabel">
         <property name="text">
-         <string>Chart goes here</string>
+         <string>Chart goes here:
+Latency per task (ms), with vs without [MASK]</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignCenter</set>
