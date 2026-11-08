@@ -14,15 +14,14 @@ def test_home_page_navigation(qtbot):
 
         page.ui.chooseModelButton.click() #simulating a user clicking the choose model button
 
-        mock_go_to.assert_called_once_with("model") #simulating a user clicking the choose model button
 
-        mock_go_to.assert_called_once_with("model") #
+        mock_go_to.assert_called_once_with("model") # asserting that this fake function gets called with model
 
-        mock_go_to.reset_mock()
+        mock_go_to.reset_mock() #resetting mock function
 
-        page.ui.viewResultsButton.click()
+        page.ui.viewResultsButton.click() #testking view results button
 
-        mock_go_to.assert_called_once_with("results")
+        mock_go_to.assert_called_once_with("results") #asserting that fake function was called with results
        
 
 
