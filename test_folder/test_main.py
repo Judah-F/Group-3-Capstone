@@ -11,3 +11,17 @@ def test_main_routing(qtbot):
 
     assert window.currentWidget() ==pages["settings"] #asserting that the visible widget actually changed to settings page
 
+
+def test_add_button_click(qtbot):
+
+    mock_action = MagicMock() #creating a fake action to test the button
+
+    page = SettingsPage(go_to=mock_action) #instantiating page
+
+    qtbot.addWidget(page) #creating a widget 
+
+    assert page.ui.addButton.text()=="Add" #confirming text says add
+
+    page.ui.addButton.click() #simulating mouse clock
+
+    mock_action.assert_called_once() #asserting that the button was pressed
