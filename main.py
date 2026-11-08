@@ -29,6 +29,7 @@ pages["results"] = ResultsPage(go_to)
 for page in pages.values():
     window.addWidget(page)
 
-go_to("home")
-window.show()
-sys.exit(app.exec())
+if __name__=="__main__": #this line of code is for testing purposes. Basically it prevents the qt bot from running the ui and causing the tests to be in a loop
+    go_to("home")
+    window.show()
+    sys.exit(app.exec())
