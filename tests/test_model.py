@@ -10,39 +10,37 @@ from pages.model import ModelPage
 
 def test_model_page_navigation(qtbot):
     """Model page loads inside qtbot without errors."""
-    #creating fake function to track calls
+    # create a fake function to track calls
     mock_go_to = MagicMock()
 
-    page = ModelPage(go_to=mock_go_to) #instantiating the ui
+    page = ModelPage(go_to=mock_go_to)  # instantiate the ui
 
-    qtbot.addWidget(page) ##adding widget
+    qtbot.addWidget(page)  # register the widget with qtbot
 
-    #this test tests the add button in the settings page
+
 def test_add_button_click(qtbot):
     """Add button is labeled "Add"."""
+    mock_action = MagicMock()  # create a fake action to test the button
 
-    mock_action = MagicMock() #creating a fake action to test the button
+    page = ModelPage(go_to=mock_action)  # instantiate the page
 
-    page = ModelPage(go_to=mock_action) #instantiating page
+    qtbot.addWidget(page)  # register the widget with qtbot
 
-    qtbot.addWidget(page) #creating a widget 
+    assert page.ui.addButton.text() == "Add"  # confirm text says Add
 
-    assert page.ui.addButton.text()=="Add" #confirming text says add
+    # TODO: simulated click doesn't trigger the action yet
+    # page.ui.addButton.click()
+    # mock_action.assert_called_once()
 
-    #page.ui.addButton.click() #simulating mouse clock test currently doesn't work
-
-    #mock_action.assert_called_once() #asserting that the button was pressed
-    
 
 def test_browse_button_click(qtbot):
     """Browse button is labeled "Browse…"."""
+    mock_action = MagicMock()  # create a fake action
 
-    mock_action = MagicMock() #creating a fake action
+    page = ModelPage(go_to=mock_action)  # instantiate the page
 
-    page =ModelPage(go_to=mock_action) #instantiating
+    assert page.ui.browseButton.text() == "Browse…"
 
-    assert page.ui.browseButton.text()=="Browse…"
-
-    #page.ui.addButton.click() #simulating mouse click #test currently doesn't work
-
-    #mock_action.assert_called_once() #test currently doesn't work
+    # TODO: simulated click doesn't trigger the action yet
+    # page.ui.browseButton.click()
+    # mock_action.assert_called_once()

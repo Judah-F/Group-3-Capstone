@@ -42,7 +42,9 @@ pages["results"] = ResultsPage(go_to)
 for page in pages.values():
     window.addWidget(page)
 
-if __name__=="__main__": #this line of code is for testing purposes. Basically it prevents the qt bot from running the ui and causing the tests to be in a loop
+# Only show the window when run directly, so importing main in tests
+# doesn't launch the UI and block the test run.
+if __name__ == "__main__":
     go_to("home")
     window.show()
     sys.exit(app.exec())

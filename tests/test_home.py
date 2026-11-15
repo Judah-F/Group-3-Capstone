@@ -5,29 +5,29 @@ Checks that the home page buttons route to the correct pages.
 """
 from unittest.mock import MagicMock
 from pages.home import HomePage
-#For these tests being UI we're using MagicMock to immitate a ui 
-#
+
+# These are UI tests, so MagicMock stands in for the real go_to function
+
+
 def test_home_page_navigation(qtbot):
-        """Home buttons route to the model and results pages."""
-    #creating a fake function for the purpose of testing the ui
-        mock_go_to =MagicMock()
+    """Home buttons route to the model and results pages."""
+    # create a fake go_to function to track which page is requested
+    mock_go_to = MagicMock()
 
+    # instantiate the page, passing in the fake function
+    page = HomePage(go_to=mock_go_to)
 
-#instantiating the ui while passing in this fake function
-        page = HomePage(go_to=mock_go_to) #
+    qtbot.addWidget(page)  # register the widget with qtbot
 
-        qtbot.addWidget(page) #adding a widget to qbot
+    # simulate a user clicking the choose model button
+    page.ui.chooseModelButton.click()
 
-        page.ui.chooseModelButton.click() #simulating a user clicking the choose model button
+    # the fake function should be called with "model"
+    mock_go_to.assert_called_once_with("model")
 
+    mock_go_to.reset_mock()  # reset the mock between checks
 
-        mock_go_to.assert_called_once_with("model") # asserting that this fake function gets called with model
+    page.ui.viewResultsButton.click()  # test the view results button
 
-        mock_go_to.reset_mock() #resetting mock function
-
-        page.ui.viewResultsButton.click() #testking view results button
-
-        mock_go_to.assert_called_once_with("results") #asserting that fake function was called with results
-       
-
-
+    # the fake function should be called with "results"
+    mock_go_to.assert_called_once_with("results")

@@ -8,12 +8,11 @@ from pages.results import ResultsPage
 
 
 def test_title(qtbot):
-     """Results page title reads "Results"."""
+    """Results page title reads "Results"."""
+    mock_action = MagicMock()  # create a fake action to test with
 
-     mock_action = MagicMock() #creating a fake action to test 
+    page = ResultsPage(go_to=mock_action)  # instantiate the page
 
-     page = ResultsPage(go_to=mock_action) #instantiating page
+    qtbot.addWidget(page)  # register the widget with qtbot
 
-     qtbot.addWidget(page) #creating a widget 
-
-     assert page.ui.titleLabel.text()=="Results" #confirming text says results
+    assert page.ui.titleLabel.text() == "Results"  # title says Results
