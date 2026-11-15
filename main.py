@@ -1,3 +1,12 @@
+"""
+Edge LLM Benchmark application entry point
+
+Creates the main window and registers each page (home, model, settings,
+results) in a QStackedWidget. Pages switch views by calling go_to()
+with the name of the page to show.
+
+Run with: python main.py
+"""
 import sys
 
 from PySide6.QtWidgets import QApplication, QStackedWidget
@@ -16,7 +25,11 @@ pages = {}
 
 
 def go_to(name):
-    """Switch to another page by name."""
+    """Switch the window to the page with the given name.
+
+    Args:
+        name (str): Key of the page in the pages dict, e.g. "home".
+    """
     if name in pages:
         window.setCurrentWidget(pages[name])
 
@@ -29,7 +42,9 @@ pages["results"] = ResultsPage(go_to)
 for page in pages.values():
     window.addWidget(page)
 
-if __name__=="__main__": #this line of code is for testing purposes. Basically it prevents the qt bot from running the ui and causing the tests to be in a loop
+# Only show the window when run directly, so importing main in tests
+# doesn't launch the UI and block the test run.
+if __name__ == "__main__":
     go_to("home")
     window.show()
     sys.exit(app.exec())
