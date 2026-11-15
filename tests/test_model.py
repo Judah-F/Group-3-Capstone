@@ -39,6 +39,8 @@ def test_browse_button_click(qtbot):
 
     page = ModelPage(go_to=mock_action)  # instantiate the page
 
+    qtbot.addWidget(page)  # register the widget with qtbot
+
     assert page.ui.browseButton.text() == "Browse…"
 
     # TODO: simulated click doesn't trigger the action yet
