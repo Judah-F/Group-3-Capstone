@@ -8,6 +8,7 @@ from pages.home import HomePage
 #For these tests being UI we're using MagicMock to immitate a ui 
 #
 def test_home_page_navigation(qtbot):
+        """Home buttons route to the model and results pages."""
     #creating a fake function for the purpose of testing the ui
         mock_go_to =MagicMock()
 

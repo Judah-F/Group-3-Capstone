@@ -10,7 +10,13 @@ from . import load_ui
 
 
 class SettingsPage(QWidget):
+    """Page for configuring benchmark settings before a run."""
     def __init__(self, go_to):
+        """Load the settings UI and connect its buttons and options.
+
+        Args:
+            go_to (callable): Function that switches to a page by name.
+        """
         super().__init__()
         self.ui = load_ui("settings.ui", self)
 

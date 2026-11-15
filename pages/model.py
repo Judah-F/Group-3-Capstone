@@ -9,7 +9,13 @@ from . import load_ui
 
 
 class ModelPage(QWidget):
+    """Page for selecting the model to benchmark."""
     def __init__(self, go_to):
+        """Load the model UI and connect its navigation buttons.
+
+        Args:
+            go_to (callable): Function that switches to a page by name.
+        """
         super().__init__()
         self.ui = load_ui("model.ui", self)
 

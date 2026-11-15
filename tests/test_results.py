@@ -8,6 +8,7 @@ from pages.results import ResultsPage
 
 
 def test_title(qtbot):
+     """Results page title reads "Results"."""
 
      mock_action = MagicMock() #creating a fake action to test 
 

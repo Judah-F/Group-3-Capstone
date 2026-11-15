@@ -9,6 +9,7 @@ from pages.model import ModelPage
 
 
 def test_model_page_navigation(qtbot):
+    """Model page loads inside qtbot without errors."""
     #creating fake function to track calls
     mock_go_to = MagicMock()
 
@@ -18,6 +19,7 @@ def test_model_page_navigation(qtbot):
 
     #this test tests the add button in the settings page
 def test_add_button_click(qtbot):
+    """Add button is labeled "Add"."""
 
     mock_action = MagicMock() #creating a fake action to test the button
 
@@ -33,6 +35,7 @@ def test_add_button_click(qtbot):
     
 
 def test_browse_button_click(qtbot):
+    """Browse button is labeled "Browse…"."""
 
     mock_action = MagicMock() #creating a fake action
 

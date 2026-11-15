@@ -7,6 +7,7 @@ from unittest.mock import MagicMock
 from main import go_to, window, pages
 
 def test_main_routing(qtbot):
+    """go_to() changes the visible page in the main window."""
     qtbot.addWidget(window) #this will add the main window to qtbot
 
     go_to("model") #this will simulate routing to the model page

@@ -25,7 +25,11 @@ pages = {}
 
 
 def go_to(name):
-    """Switch to another page by name."""
+    """Switch the window to the page with the given name.
+
+    Args:
+        name (str): Key of the page in the pages dict, e.g. "home".
+    """
     if name in pages:
         window.setCurrentWidget(pages[name])
 
