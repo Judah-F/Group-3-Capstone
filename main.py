@@ -1,3 +1,12 @@
+"""
+Edge LLM Benchmark application entry point
+
+Creates the main window and registers each page (home, model, settings,
+results) in a QStackedWidget. Pages switch views by calling go_to()
+with the name of the page to show.
+
+Run with: python main.py
+"""
 import sys
 
 from PySide6.QtWidgets import QApplication, QStackedWidget

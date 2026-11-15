@@ -1,3 +1,8 @@
+"""
+Home page of the Edge LLM Benchmark GUI
+
+Landing screen with buttons to choose a model or view past results.
+"""
 from PySide6.QtWidgets import QWidget
 
 from . import load_ui

@@ -1,3 +1,9 @@
+"""
+Benchmark settings page of the Edge LLM Benchmark GUI
+
+Lets the user choose benchmark settings before starting a run. The
+custom settings group is only enabled when "Custom" mode is selected.
+"""
 from PySide6.QtWidgets import QWidget
 
 from . import load_ui

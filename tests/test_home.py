@@ -1,3 +1,8 @@
+"""
+Tests for the home page
+
+Checks that the home page buttons route to the correct pages.
+"""
 from unittest.mock import MagicMock
 from pages.home import HomePage
 #For these tests being UI we're using MagicMock to immitate a ui 

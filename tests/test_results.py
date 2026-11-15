@@ -1,3 +1,8 @@
+"""
+Tests for the results page
+
+Checks that the results page loads with the correct title.
+"""
 from unittest.mock import MagicMock
 from pages.results import ResultsPage
 

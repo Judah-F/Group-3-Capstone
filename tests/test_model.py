@@ -1,3 +1,9 @@
+"""
+Tests for the model selection page
+
+Checks that the page loads and its Add and Browse buttons are labeled
+correctly.
+"""
 from unittest.mock import MagicMock
 from pages.model import ModelPage
 

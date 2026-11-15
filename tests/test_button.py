@@ -1,3 +1,8 @@
+"""
+Placeholder tests for page buttons
+
+TODO: these are draft ideas and are not collected by pytest yet.
+"""
 #import pytest
 
 #def button_press_test

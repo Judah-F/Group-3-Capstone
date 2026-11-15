@@ -1,3 +1,9 @@
+"""
+Results page of the Edge LLM Benchmark GUI
+
+Displays benchmark results and lets the user return home or start a
+new benchmark.
+"""
 from PySide6.QtWidgets import QWidget
 
 from . import load_ui

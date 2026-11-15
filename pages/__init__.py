@@ -1,3 +1,9 @@
+"""
+Shared helpers for the GUI pages
+
+Provides load_ui(), which loads a Qt Designer .ui file from the ui/
+folder at runtime and embeds it inside a page widget.
+"""
 from pathlib import Path
 
 from PySide6.QtUiTools import QUiLoader

@@ -1,3 +1,8 @@
+"""
+Tests for the main application window
+
+Checks that go_to() switches the visible page in the stacked widget.
+"""
 from unittest.mock import MagicMock
 from main import go_to, window, pages
 

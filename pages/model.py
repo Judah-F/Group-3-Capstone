@@ -1,3 +1,8 @@
+"""
+Model selection page of the Edge LLM Benchmark GUI
+
+Lets the user pick or browse for a model before moving on to settings.
+"""
 from PySide6.QtWidgets import QWidget
 
 from . import load_ui
