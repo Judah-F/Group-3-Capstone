@@ -1,0 +1,8 @@
+[MAIN]
+# PySide6 is a compiled extension; let pylint load it so it can
+# see names like QWidget instead of reporting E0611.
+extension-pkg-allow-list=PySide6
+
+[MESSAGES CONTROL]
+# Qt page classes only need __init__, so this check doesn't fit.
+disable=too-few-public-methods
